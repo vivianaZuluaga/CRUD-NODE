@@ -1,0 +1,51 @@
+{{#each errors}}
+  <div class="alert alert-danger">
+    {{text}}
+  </div>
+{{/each}}
+
+<div class="card card-body">
+  <h3 class="text-center">Editar Usuario</h3>
+  <form action="/users/edit/{{user._id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="form-group">
+          <label for="name">Nombres:</label>
+          <input name="name" type="text" class="form-control" value="{{user.name}}" required>
+        </div>
+        <div class="form-group">
+          <label for="last_name">Apellidos:</label>
+          <input name="last_name" type="text" class="form-control" value="{{user.last_name}}" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Dirección:</label>
+          <input name="address" type="text" class="form-control" value="{{user.address}}" required>
+        </div>
+        <div class="form-group">
+          <label for="city">Ciudad:</label>
+          <input name="city" type="text" class="form-control" value="{{user.city}}" required>
+        </div>
+        <div class="form-group">
+          <label for="state">Estado:</label>
+          <input name="state" type="text" class="form-control" value="{{user.state}}" required>
+        </div>
+        <div class="form-group">
+          <label for="country">País:</label>
+          <input name="country" type="text" class="form-control" value="{{user.country}}" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input name="phone" type="number" class="form-control" value="{{user.phone}}" required>
+        </div>
+        <div class="form-group">
+          <label for="area_code">Código de Área:</label>
+          <input name="area_code" type="number" class="form-control" value="{{user.area_code}}" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input name="email" type="email" class="form-control" value="{{user.email}}" required>
+        </div>
+    <button type="submit" class="btn btn-dark">
+      Actualizar
+    </button>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+  <h2> Usuarios Registrados </h2>
+  </hr>
+  </br>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Dirección</th>
+        <th>Ciudad</th>
+        <th>País</th>
+        <th>Teléfono</th>
+        <th>Email</th>
+        <th>Operaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{last_name}}</td>
+          <td>{{address}}</td>
+          <td>{{city}}</td>
+          <td>{{country}}</td>
+          <td>{{phone}}</td>
+          <td>{{email}}</td>
+          <td>
+          <a href="/users/edit/{{_id}}" class="btn btn-primary btn-block mb-2"><i class="fas fa-pencil-alt"></i></a>
+          <form action="/users/delete/{{id}}?_method=DELETE" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger btn-block"><i class="fas fa-trash-alt"></i></button>
+          </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
